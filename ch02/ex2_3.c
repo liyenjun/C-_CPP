@@ -1,19 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define POUND2KG 0.454
+#define M2TOPING 0.3025
 
 int main(void)
 {
-    float fpound, fkg;
+    float fl, fw, fping;
 
-    printf("Input pound: ");
-    scanf("%f", &fpound);
-    printf("\n %f cm", fpound*POUND2KG);
+    printf("Input leng(m): \n");
+    scanf("%f", &fl);
+    printf("Input weight(m): \n");
+    scanf("%f", &fw);    
+    printf(" %f ping\n", fl*fw*M2TOPING);
 
-    printf("\nInput kg: ");
-    scanf("%f", &fkg);
-    printf("\n %f cm", fkg/POUND2KG);
+    printf("Input ping: \n");
+    scanf("%f", &fping);
+    printf(" %f m^2\n", fping/M2TOPING);
 	
 	system("pause"); return(0);
 }

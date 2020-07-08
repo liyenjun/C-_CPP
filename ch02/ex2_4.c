@@ -1,19 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define INCH2CM 2.54
+#define C2F fc*9/5+32
+#define F2C (ff-32)*5/9
 
 int main(void)
 {
-    float fInch, fcm;
+    float fc, ff;
 
-    printf("Input inch: ");
-    scanf("%f", &fInch);
-    printf("\n %f cm", fInch*INCH2CM);
+    printf("Input Celsius: ");
+    scanf("%f", &fc);
+    printf("\n %f Fahrenheit ", C2F);
 
-    printf("\nInput cm: ");
-    scanf("%f", &fcm);
-    printf("\n %f cm", fcm/INCH2CM);
+    printf("\nInput Fahrenheit : ");
+    scanf("%f", &ff);
+    printf("\n %f Celsius", F2C);
 	
 	system("pause"); return(0);
 }
