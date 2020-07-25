@@ -14,34 +14,16 @@ void Sort(int iScore[][4], int iCommand)
     {
         max = i;
         for(k=i; k<8; k++)
+        {
             if(iScore[k][iCommand-1]>iScore[max][iCommand-1]) max = k;
-
-        printf("max is %d\n", max);
-        /*
+        }                
         for(j=0; j<4; j++)
         {
             temp = iScore[i][j];
-            iScore[i][j] = iScore[i][max];
-            iScore[i][max] = temp;
-        }
-        */
+            iScore[i][j] = iScore[max][j];
+            iScore[max][j] = temp;
+        }        
     }
-    /*
-    for(i=0; i<8; i++)
-    {
-        max = i; 
-        for(k=i;k<5;k++)
-            if(iScore[iCommand][k]>iScore[iCommand][max]) max = k;
-
-        //Switch data
-        for(j=0;j<4;j++)
-        {
-            temp = iScore[i][j];
-            iScore[i][j] = iScore[i][max];
-            iScore[i][max] = temp;
-        }
-    }
-    */
 }
 
 int GenNum(void)
@@ -53,18 +35,31 @@ int SocrePrint(int iScore[][4], int iCommand)
 {
     int i, j, iSort;
 
-    if(iCommand!=1)
-    {
+    //if(iCommand!=1)
+    //{
         Sort(iScore, iCommand);
-    }
+    //}
     printf("  ID   C   M   T\n");
-    for(i=0;i<8;i++)
+    if(iCommand==1)
     {
-        
-        for(j=0;j<4;j++)
-            printf("%4d", iScore[i][j]);
-        printf("\n");
+        for(i=7;i>-1;i--)
+        {        
+            for(j=0;j<4;j++)
+                printf("%4d", iScore[i][j]);
+            printf("\n");
+        }
     }
+    else
+    {
+        for(i=0;i<8;i++)
+        {        
+            for(j=0;j<4;j++)
+                printf("%4d", iScore[i][j]);
+            printf("\n");
+        }
+    }
+    
+
 }
 
 void ScoreInput(int iScore[][4])
